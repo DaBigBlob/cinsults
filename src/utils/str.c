@@ -26,10 +26,4 @@ char* str_from_ulong(ulong ul, char str[], ulong str_len) {
     return cur;
 }
 
-#ifdef SYS_WINDOWS
-    #define nl "\r\n"
-#else
-    #define nl "\n"
-#endif
-
 #endif

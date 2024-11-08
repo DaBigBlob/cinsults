@@ -29,9 +29,8 @@
 #endif
 
 #ifndef SYS_TARGET
-    // empty implementation
     ulong _sys_write(void* buf, ulong len) {
-        return 0;
+        return 1;
     }
 
     ulong _sys_time() {
