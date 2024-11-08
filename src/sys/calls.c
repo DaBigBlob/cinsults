@@ -7,9 +7,6 @@
         - ulong _sys_time()
 */
 
-// #define SYS_MACOS
-// #define SYS_ARM64
-
 #include "../utils/prelude.c"
 
 // this is a template to be followed by all target and/or compilers combinations
@@ -28,9 +25,25 @@
     #endif
 #endif
 
+// #define SYS_MACOS
+// #define SYS_ARM64
+
 #ifdef SYS_MACOS
     #ifdef SYS_ARM64
         #define SYS_CALLS
+
+        /*
+            we need:
+                - write
+                - gettimeofday
+            macos -> xnu -> bsd
+            (https://github.com/apple-open-source/macos/blob/master/xnu/bsd/kern/syscalls.master)
+            https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L49
+            https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L190
+            we see:
+                - write is sycall # 4
+                - gettimeofday is syscall # 116
+        */
 
         #include <unistd.h>  // temporary till i write the syscalls
 
