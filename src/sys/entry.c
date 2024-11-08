@@ -50,7 +50,11 @@
 
 
 #ifndef SYS_CC // for unsupported compiler
-    int main(int argc, char** argv) {
+    #include <stdio.h> // all nostd gaurentees are off
+    #include "../utils/prelude.c"
+    int _main(int argc, char** argv) {
+        printf("THIS COMPILER IS NOT SUPPORTED.\n");
+        printf("%s", nosupport);
         return 1;
     }
 #endif
