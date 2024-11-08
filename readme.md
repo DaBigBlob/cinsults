@@ -9,6 +9,7 @@ right now only clang is supported however gcc support is on the way
 ```bash
     ./build.sh -DSYS_ARM64_APPLE_MACOS
 ```
+you'll find builds in the builds/ directory
 ### x86_64 macos
 wip
 ### arm64 linux
