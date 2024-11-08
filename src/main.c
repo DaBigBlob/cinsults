@@ -26,7 +26,7 @@ int cmd_help(char* stric, char* self) {
     strwrite(
         "Author: Hman <hman@hman.io>" nl
         nl
-        "Writes insult(s) to stdout. Written in the C programming language." nl
+        "Writes insult(s) to stdout. Written in the C programming language. Without C stdlib." nl
         nl
         "USAGE" nl
     );
