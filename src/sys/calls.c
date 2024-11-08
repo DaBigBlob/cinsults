@@ -12,9 +12,27 @@
 
 #include "../utils/prelude.c"
 
+// this is a template to be followed by all target and/or compilers combinations
+#ifdef SYS_operatingsystem
+    #ifdef SYS_machine
+        #define SYS_CALLS
+
+        ulong _sys_write(void* buf, ulong len) {
+            return 0;
+        }
+
+        ulong _sys_time() {
+            return 0;
+        }
+    #endif
+#endif
+
 #ifdef SYS_MACOS
     #ifdef SYS_ARM64
-        #include <unistd.h>
+        #define SYS_CALLS
+
+        #include <unistd.h>  // temporary till i write the syscalls
+
         ulong _sys_write(void* buf, ulong len) {
             return syscall(4, 1, buf, len);
         }
@@ -28,7 +46,7 @@
     #endif
 #endif
 
-#ifndef SYS_TARGET
+#ifndef SYS_CALLS
     #include <stdio.h> // all nostd gaurentees are off if target id undefined
     #include "../utils/prelude.c"
     ulong _sys_write(void* buf, ulong len) {
