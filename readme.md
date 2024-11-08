@@ -4,7 +4,7 @@ Writes insult(s) to stdout. Written in the C programming language. Without C std
 > heavy WIP
 
 ## building
-right now clang is only supported however gcc support is on the way
+right now only clang is supported however gcc support is on the way
 ### arm64 macos
 ```bash
     ./build.sh -DSYS_ARM64_APPLE_MACOS
