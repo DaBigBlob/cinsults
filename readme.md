@@ -4,7 +4,8 @@ Writes insult(s) to stdout. Written in the C programming language without stdlib
 > heavy WIP
 
 ## building
-right now only clang is supported however gcc support is on the way
+right now only clang is supported however gcc support is on the way.
+cross compiling should be trivial.
 ### arm64 macos
 ```bash
     ./build.sh -DSYS_ARM64_APPLE_MACOS
