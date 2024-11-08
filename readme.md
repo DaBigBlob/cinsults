@@ -1,5 +1,5 @@
 # cinsults
-Writes insult(s) to stdout. Written in the C programming language. Without C stdlib.
+Writes insult(s) to stdout. Written in the C programming language without stdlib.
 
 > heavy WIP
 
@@ -17,3 +17,8 @@ wip
 wip
 ### x86_64 windows
 wip
+
+## please help add more insults
+to `src/insults.c`
+just add more insults at the end of the char* array[].
+make sure to update the patch insult version (the third number in the version string of INSULTS).
