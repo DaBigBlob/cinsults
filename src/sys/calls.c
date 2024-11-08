@@ -29,7 +29,7 @@
 #endif
 
 #ifndef SYS_TARGET
-    #include <stdio.h> // all nostd gaurentees are off
+    #include <stdio.h> // all nostd gaurentees are off if target id undefined
     #include "../utils/prelude.c"
     ulong _sys_write(void* buf, ulong len) {
         printf("\nTHIS TARGET IS NOT SUPPORTED.\n");
