@@ -13,6 +13,7 @@
 #include "../utils/prelude.c"
 
 // this is a template to be followed by all target and/or compilers combinations
+// you can be arbitarily specific i.e. add vendor r compiler to specification of syscall
 #ifdef SYS_operatingsystem
     #ifdef SYS_machine
         #define SYS_CALLS
