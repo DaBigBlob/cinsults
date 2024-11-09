@@ -13,7 +13,7 @@ typedef enum _bool {
 //nul terminated buffer
 ulong buflen(const void* buf, ulong element_size) {
     ulong i = 0;
-    while (*( (char*) buf + (i*element_size))) i++; // checking first byte should be enough
+    while (*( (char*) buf + (i*element_size))) i++; // theres a bug here
     return i;
 }
 
