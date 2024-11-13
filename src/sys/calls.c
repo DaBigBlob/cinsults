@@ -13,6 +13,7 @@
 
 #ifdef __APPLE__
     #define NEWLINE "\n"
+    
     #ifdef __arm64__
         /*
             we need:
