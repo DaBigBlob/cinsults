@@ -5,10 +5,10 @@ Writes insult(s) to stdout. Written in the C programming language without stdlib
 
 ## building
 right now only clang is supported however gcc support is on the way.  
-cross compiling should be trivial.
+
 ### arm64 macos
 ```bash
-    ./build.sh -DSYS_ARM64_APPLE_MACOS
+    ./build.sh
 ```
 you'll find builds in the builds/ directory
 ### x86_64 macos
@@ -24,3 +24,7 @@ wip
 to `src/insults.c`
 just add more insults at the end of the char* array[].
 make sure to update the patch insult version (the third number in the version string of INSULTS).
+
+# note (for now)
+dont try to use automatic optimizer i.e. `-O`. 
+it will fuck things up.
