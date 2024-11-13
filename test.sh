@@ -1,4 +1,4 @@
 #!/bin/sh
 
-BIN=$(./build.sh -nostdlib -fno-stack-protector)
+BIN=$(./build.sh)
 sh -c "${BIN} $*"
