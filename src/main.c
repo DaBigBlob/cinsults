@@ -44,7 +44,9 @@ int cmd_help(char* stric, char* self) {
     );
     strwrite(stric);
     strwrite(
-        ") of the insult to print (default: random)" nl        
+        ") of the insult to print (default: random)" nl
+        nl
+        "Unknown options are ignored." nl
         nl
         "OPTION CONFLICT" nl
         "Option with least rank number takes presidence if in conflict with nother option." nl
@@ -62,7 +64,7 @@ int cmd_all(char* dlim) {
 }
 
 int prog_main(int argc, char** argv) {
-    ulong ic = buflen(insults, sizeof(char*));
+    ulong ic = insult_count();
     char __ULONG_MAX_CHARS[] = "4294967295\0";
     char* stric = str_from_ulong(ic, __ULONG_MAX_CHARS, 11);
 

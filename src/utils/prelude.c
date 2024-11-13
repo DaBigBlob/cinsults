@@ -10,12 +10,7 @@ typedef enum _bool {
     false = !1
 } bool;
 
-//nul terminated buffer
-ulong buflen(const void* buf, ulong element_size) {
-    ulong i = 0;
-    while (*( (char*) buf + (i*element_size))) i++; // theres a bug here
-    return i;
-}
+#define BUFLEN(buf, type, dlim) { ulong i = 0; while (*( (type*) buf + i) != dlim) i++; return i; }
 
 #ifdef SYS_WINDOWS
     #define nl "\r\n"

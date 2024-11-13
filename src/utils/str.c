@@ -14,7 +14,9 @@ void first_str_mismatch(char** ref_str1, char** ref_str2) {
     *ref_str2 = str2; 
 }
 
-#define strwrite(str) _sys_write(str, buflen(str, sizeof(char)))
+ulong str_len(char* str) BUFLEN(str, char, '\0')
+
+#define strwrite(str) _sys_write(str, str_len(str))
 
 char* str_from_ulong(ulong ul, char str[], ulong str_len) {
     char* cur = str+str_len;
