@@ -10,7 +10,7 @@ right now only clang is supported however gcc support is on the way.
 ```bash
     ./build.sh
 ```
-you'll find builds in the builds/ directory
+you'll find builds in the bin/ directory
 ### x86_64 macos
 wip
 ### arm64 linux
