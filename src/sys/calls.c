@@ -16,18 +16,11 @@
     
     #ifdef __arm64__
         /*
-            we need:
-                - write
-                - gettimeofday
             macos -> xnu -> bsd
             (https://github.com/apple-open-source/macos/blob/master/xnu/bsd/kern/syscalls.master)
             https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L49
             https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L190
-            we see:
-                - write is sycall # 4
-                - gettimeofday is syscall # 116
         */
-
         void* syscall4(void* a1, void* a2, void* a3, void* a4) {
             void* _ret = 0;
             __asm__ volatile (
@@ -44,8 +37,9 @@
             );
             return _ret;
         }
+    #endif
 
-        ulong _sys_write(void* buf, ulong len) {
+    ulong _sys_write(void* buf, ulong len) {
             return (ulong) syscall4((void*)4, (void*)1, buf, (void*)len);
         }
 
@@ -55,7 +49,6 @@
             syscall4((void*)116, &tt, 0, 0);
             return *tt;
         }
-    #endif
 #endif
 
 // add more supported targets
