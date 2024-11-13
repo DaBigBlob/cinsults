@@ -50,6 +50,9 @@ int cmd_help(char* stric, char* self) {
         nl
         "OPTION CONFLICT" nl
         "Option with least rank number takes presidence if in conflict with nother option." nl
+        nl
+        "DEFAULT BEHAVIOR"nl
+        "Writes a random insult to stdout."nl
     );
     return 0;
 }
