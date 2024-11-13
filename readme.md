@@ -20,6 +20,9 @@ wip
 ### x86_64 windows
 wip
 
+## more targets
+add support for more targets and compilers (+linkers) at `src/sys/calls` and `src/sys/entry`
+
 ## please help add more insults
 to `src/insults.c`
 just add more insults at the end of the char* array[].
