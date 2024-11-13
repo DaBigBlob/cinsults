@@ -15,27 +15,29 @@
     #define NEWLINE "\n"
     
     #ifdef __arm64__
-        /*
-            macos -> xnu -> bsd
-            (https://github.com/apple-open-source/macos/blob/master/xnu/bsd/kern/syscalls.master)
-            https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L49
-            https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L190
-        */
-        void* syscall4(void* a1, void* a2, void* a3, void* a4) {
-            void* _ret = 0;
-            __asm__ volatile (
-                "mov x16, %1\n"
-                "mov x0, %2\n"
-                "mov x1, %3\n"
-                "mov x2, %4\n"
-                "svc #0x80\n"
-                "mov %0, x0\n"
-                : "=r" (_ret)   // output operands
-                : "r" (a1), "r" (a2), "r" (a3), "r" (a4) // input operands
-                : "x3", "x4"  // clobbers
-            );
-            return _ret;
-        }
+    #ifdef __clang__
+    /*
+        macos -> xnu -> bsd
+        (https://github.com/apple-open-source/macos/blob/master/xnu/bsd/kern/syscalls.master)
+        https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L49
+        https://github.com/apple-open-source/macos/blob/8d328decdf52737f128024f07f5fba4ab39f9cb0/xnu/bsd/kern/syscalls.master#L190
+    */
+    void* syscall4(void* a1, void* a2, void* a3, void* a4) {
+        void* _ret = 0;
+        __asm__ volatile (
+            "mov x16, %1\n"
+            "mov x0, %2\n"
+            "mov x1, %3\n"
+            "mov x2, %4\n"
+            "svc #0x80\n"
+            "mov %0, x0\n"
+            : "=r" (_ret)   // output operands
+            : "r" (a1), "r" (a2), "r" (a3), "r" (a4) // input operands
+            : "x3", "x4"  // clobbers
+        );
+        return _ret;
+    }
+    #endif
     #endif
 
     ulong _sys_write(void* buf, ulong len) {
