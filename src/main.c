@@ -88,7 +88,7 @@ int prog_main(int argc, char** argv) {
         char* ii = arg_of_opt(argv, "-i");
         if (!ii) ii = arg_of_opt(argv, "--index");
         if (ii) i = parse_ulong(ii)%ic;
-        if (!i) i = _sys_time()%ic;
+        else i = _sys_time()%ic;
     }
 
     strwrite((void *) insults[i]);
