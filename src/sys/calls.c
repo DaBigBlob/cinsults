@@ -40,15 +40,15 @@
     #endif
 
     ulong _sys_write(void* buf, ulong len) {
-            return (ulong) syscall4((void*)4, (void*)1, buf, (void*)len);
-        }
+        return (ulong) syscall4((void*)4, (void*)1, buf, (void*)len);
+    }
 
 
-        ulong _sys_time() {
-            ulong tt[2];
-            syscall4((void*)116, &tt, 0, 0);
-            return *tt;
-        }
+    ulong _sys_time() {
+        ulong tt[2];
+        syscall4((void*)116, &tt, 0, 0);
+        return *tt;
+    }
 #endif
 
 // add more supported targets
