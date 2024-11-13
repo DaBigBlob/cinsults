@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MAIN="./src/sys/entry.c"
-BUILDS="./builds"
+BUILDS="./bin"
 NAME="cinsult"
 
 mkdir -p $BUILDS
