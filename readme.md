@@ -1,5 +1,5 @@
 # cinsults
-Writes insult(s) to stdout. Written in the C programming language without stdlib.
+Writes insult(s) to stdout. Written in the C programming language without stdlib (or any other lib).
 
 > heavy WIP
 
