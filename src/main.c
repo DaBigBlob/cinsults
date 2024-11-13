@@ -39,7 +39,7 @@ int cmd_help(char* stric, char* self) {
         "1" "\t-v --version"  "\tPrint the version text" nl
         "2" "\t-n --no-delim" "\tDon't print delimiter (dafault: newline) after insult" nl
         "3" "\t-d --delim"    "\tDelimiter between (or after) insults (default: newline)" nl
-        "4" "\t-a --all"      "\tPrint all insults, one on each line" nl
+        "4" "\t-a --all"      "\tPrint all insults, separated by delimiter" nl
         "5" "\t-i --index"    "\tIndex (mod "
     );
     strwrite(stric);
