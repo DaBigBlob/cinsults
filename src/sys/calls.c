@@ -24,7 +24,6 @@
         void* syscall4(void* a1, void* a2, void* a3, void* a4) {
             void* _ret = 0;
             __asm__ volatile (
-                ".align 4\n"
                 "mov x16, %1\n"
                 "mov x0, %2\n"
                 "mov x1, %3\n"
