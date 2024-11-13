@@ -1,4 +1,4 @@
 #!/bin/sh
 
-BIN=$(./build.sh -DSYS_ARM64_APPLE_MACOS)
+BIN=$(./build.sh)
 sh -c "${BIN} $*"

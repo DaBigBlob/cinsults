@@ -6,7 +6,7 @@ NAME="cinsult"
 
 mkdir -p $BUILDS
 
-clang $MAIN "$@" -o "${BUILDS}/${NAME}-dbg" -Wno-deprecated-declarations
-clang $MAIN "$@" -O3 -o "${BUILDS}/${NAME}" -Wno-deprecated-declarations
+clang $MAIN "$@" -o "${BUILDS}/${NAME}-dbg"
+clang $MAIN "$@" -O3 -o "${BUILDS}/${NAME}"
 
 printf "%s" "${BUILDS}/${NAME}-dbg"
