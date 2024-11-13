@@ -26,7 +26,7 @@ int cmd_help(char* stric, char* self) {
     strwrite(
         "Author: Hman <hman@hman.io>" nl
         nl
-        "Writes insult(s) to stdout. Written in the C programming language without stdlib." nl
+        "Writes insult(s) to stdout. Written in the C programming language without C stdlib." nl
         nl
         "USAGE" nl
     );
@@ -49,7 +49,7 @@ int cmd_help(char* stric, char* self) {
         "Unknown options are ignored." nl
         nl
         "OPTION CONFLICT" nl
-        "Option with least rank number takes presidence if in conflict with nother option." nl
+        "Option with least rank number takes presidence if in conflict with another option." nl
         nl
         "DEFAULT BEHAVIOR"nl
         "Writes a random insult to stdout."nl
