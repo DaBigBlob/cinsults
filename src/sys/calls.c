@@ -61,7 +61,7 @@
 #endif
 
 #ifndef SYS_CALLS
-    #include <stdio.h> // all nostd gaurentees are off if target id undefined
+    #include <stdio.h> // all nostd gaurentees are off if target is undefined
     #include "../utils/prelude.c"
     ulong _sys_write(void* buf, ulong len) {
         printf("\nTHIS TARGET IS NOT SUPPORTED.\n");
