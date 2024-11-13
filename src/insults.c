@@ -12,6 +12,6 @@ static const char* insults[] = {
     (char*) (long) 0 // end sentinel (add new insult before this)
 };
 
-ulong insult_count() BUFLEN(insults, char*, (char*) (long) 0)
+ulong insult_count() BUFLEN(insults, char*, (char*) (long) 0) // i really really really didnt wanna use sizeof
 
 #endif
