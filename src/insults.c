@@ -9,7 +9,7 @@ static const char* insults[] = {
     "Skibidi.",
     "Rizz.",
     "Slut.",
-    (char*) (long) 0 // end sentinel
+    (char*) (long) 0 // end sentinel (add new insult before this)
 };
 
 ulong insult_count() BUFLEN(insults, char*, (char*) (long) 0)
