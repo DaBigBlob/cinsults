@@ -28,17 +28,32 @@
                 - gettimeofday is syscall # 116
         */
 
-        #include <unistd.h>  // temporary till i write the syscalls
+        void* syscall4(void* a1, void* a2, void* a3, void* a4) {
+            void* _ret = 0;
+            __asm__ volatile (
+                ".align 4\n"
+                "mov x16, %1\n"
+                "mov x0, %2\n"
+                "mov x1, %3\n"
+                "mov x2, %4\n"
+                "svc #0x80\n"
+                "mov %0, x0\n"
+                : "=r" (_ret)   // output operands
+                : "r" (a1), "r" (a2), "r" (a3), "r" (a4) // input operands
+                : "x3", "x4"  // clobbers
+            );
+            return _ret;
+        }
 
         ulong _sys_write(void* buf, ulong len) {
-            return syscall(4, 1, buf, len);
+            return (ulong) syscall4((void*)4, (void*)1, buf, (void*)len);
         }
 
 
         ulong _sys_time() {
-            struct timeval tv;
-            syscall(116, &tv, 0);
-            return tv.tv_sec;
+            ulong tt[2];
+            syscall4((void*)116, &tt, 0, 0);
+            return *tt;
         }
     #endif
 #endif

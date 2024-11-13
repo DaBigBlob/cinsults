@@ -6,7 +6,6 @@ NAME="cinsult"
 
 mkdir -p $BUILDS
 
-clang $MAIN "$@" -o "${BUILDS}/${NAME}-dbg"
-clang $MAIN "$@" -O3 -o "${BUILDS}/${NAME}"
+clang $MAIN "$@" -o "${BUILDS}/${NAME}"
 
-printf "%s" "${BUILDS}/${NAME}-dbg"
+printf "%s" "${BUILDS}/${NAME}"
