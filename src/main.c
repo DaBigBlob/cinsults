@@ -32,7 +32,7 @@ int cmd_help(char* stric, char* self) {
     );
     strwrite(self);
     strwrite(
-        "[OPTIONS...]" nl
+        " [OPTIONS...]" nl
         nl
         "RANK\tOPTIONS\t\tDESCRIPTION" nl
         "0" "\t-h --help"     "\tPrint this message to stdout" nl
