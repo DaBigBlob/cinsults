@@ -8,9 +8,8 @@ right now only clang is supported however gcc support is on the way.
 
 ### arm64 macos
 ```bash
-    make build
+    make build BA="-target aarch64-macos"
 ```
-you'll find builds in the bin/ directory
 ### x86_64 macos
 wip
 ### arm64 linux
