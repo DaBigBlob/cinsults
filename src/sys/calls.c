@@ -15,7 +15,6 @@
     #define NEWLINE "\n"
     
     #ifdef __arm64__
-    #ifdef __clang__
     /*
         macos -> xnu -> bsd
         (https://github.com/apple-open-source/macos/blob/master/xnu/bsd/kern/syscalls.master)
@@ -37,7 +36,6 @@
         );
         return _ret;
     }
-    #endif
     #endif
 
     ulong _sys_write(void* buf, ulong len) {
