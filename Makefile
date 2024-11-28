@@ -5,7 +5,7 @@ SRC = ./src
 ENTRY = sys/entry.c
 
 CC = clang
-CFLAGS = -nostdlib -Wall -Wextra -Wfatal-errors -fno-stack-protector -fno-unwind-tables -fno-exceptions #-Wl,-no_compact_unwind
+CFLAGS = -nostdlib -O3 -Wall -Wextra -Wfatal-errors -fno-stack-protector -fno-unwind-tables -fno-exceptions #-Wl,-no_compact_unwind
 
 build: ${SRC}/${ENTRY}
 	@mkdir -p ${BIN}
