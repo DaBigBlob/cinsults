@@ -66,7 +66,7 @@ int cmd_all(char* dlim) {
     return 0;
 }
 
-int prog_main(int argc, char** argv) {
+int prog_main(char** argv) {
     ulong ic = insult_count();
     char __ULONG_MAX_CHARS[] = "4294967295\0";
     char* stric = str_from_ulong(ic, __ULONG_MAX_CHARS, 11);

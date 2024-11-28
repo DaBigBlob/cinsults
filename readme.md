@@ -8,7 +8,7 @@ right now only clang is supported however gcc support is on the way.
 
 ### arm64 macos
 ```bash
-    ./build.sh
+    make build
 ```
 you'll find builds in the bin/ directory
 ### x86_64 macos

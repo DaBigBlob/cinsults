@@ -7,7 +7,8 @@
 
     #define def_main
     int main(int argc, char** argv) {
-        return prog_main(argc, argv);
+        (void)argc;
+        return prog_main(argv);
     }
 #endif
 
