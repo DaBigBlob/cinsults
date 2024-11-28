@@ -28,9 +28,9 @@
                 "mov x2, %4\n"
                 "svc #0x80\n"
                 "mov %0, x0\n"
-                : "=r" (_ret)   // output operands
-                : "r" (cn), "r" (a1), "r" (a2), "r" (a3) // input operands
-                : "memory", "x1", "x0", "x16"  // clobbers
+                : "=r" (_ret)
+                : "r" (cn), "r" (a1), "r" (a2), "r" (a3)
+                : "memory", "x1", "x0", "x16"
             );
             return _ret;
         }
