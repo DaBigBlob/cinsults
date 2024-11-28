@@ -20,7 +20,7 @@
         */
         #define def_syscall3
         void* syscall3(void* cn, void* a1, void* a2, void* a3) {
-            void* _ret = 0;
+            void* _ret;
             __asm__ volatile (
                 "mov x16, %1\n"
                 "mov x0, %2\n"
