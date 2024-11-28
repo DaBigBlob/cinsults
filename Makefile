@@ -12,7 +12,7 @@ clean: ${BIN}
 
 build: ${SRC}/${ENTRY}
 	mkdir -p ${BIN}
-	${CC} ${SRC}/${ENTRY} -o ${BIN}/${NAME} ${CFLAGS}
+	${CC} ${SRC}/${ENTRY} ${BARGS} -o ${BIN}/${NAME} ${CFLAGS}
 
 test: build
-	${BIN}/${NAME} ${ARGS}
+	${BIN}/${NAME} ${TARGS}
