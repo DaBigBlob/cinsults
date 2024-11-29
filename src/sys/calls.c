@@ -17,6 +17,7 @@
     #ifdef __aarch64__
         /*
             https://github.com/swiftlang/swift/blob/main/docs/ABI/CallConvSummary.rst
+            https://book.hacktricks.xyz/macos-hardening/macos-security-and-privilege-escalation/macos-apps-inspecting-debugging-and-fuzzing/arm64-basic-assembly
         */
         #define def_syscall3
         void* syscall3(void* cn, void* a1, void* a2, void* a3) {
@@ -30,7 +31,32 @@
                 "mov %0, x0\n"
                 : "=r" (_ret)
                 : "r" (cn), "r" (a1), "r" (a2), "r" (a3)
-                : "memory", "x1", "x0", "x16"
+                : "memory", "x0", "x1", "x2", "x16", "x17"
+            );
+            return _ret;
+        }
+    #endif
+
+    // #define __x86_64__
+    #ifdef __x86_64__
+        /*
+            https://github.com/swiftlang/swift/blob/main/docs/ABI/CallConvSummary.rst
+            https://book.hacktricks.xyz/macos-hardening/macos-security-and-privilege-escalation/macos-apps-inspecting-debugging-and-fuzzing/introduction-to-x64
+        */
+        #define def_syscall3
+        void* syscall3(void* cn, void* a1, void* a2, void* a3) {
+            void* _ret;
+            cn = (void*) (((ulong)cn)|0x2000000ul);
+            __asm__ volatile (
+                "movq %1, %%rax\n"
+                "movq %2, %%rdi\n"
+                "movq %3, %%rsi\n"
+                "movq %4, %%rdx\n"
+                "syscall\n"
+                "movq %%rax, %0\n"
+                : "=r" (_ret)
+                : "r" (cn), "r" (a1), "r" (a2), "r" (a3)
+                : "memory", "rax", "rdi", "rsi", "rdx"//, "rcx", "r11"
             );
             return _ret;
         }
