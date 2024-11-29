@@ -5,13 +5,16 @@ Writes insult(s) to stdout. Written in the C programming language without stdlib
 
 ## building
 right now only clang is supported however gcc support is on the way.  
+i recommend passing `CC="zig cc"` to `make` as well because it makes cross compiling insanely easy.  
 
 ### arm64 macos
 ```bash
     make build BA="-target aarch64-macos"
 ```
 ### x86_64 macos
-wip
+```bash
+    make build BA="-target x86_64-macos"
+```
 ### arm64 linux
 wip
 ### x86_64 linux
