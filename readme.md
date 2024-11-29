@@ -1,8 +1,6 @@
 # cinsults
 Writes insult(s) to stdout. Written in the C programming language without stdlib (or any other lib).
 
-> heavy WIP
-
 ## building
 right now only clang is supported however gcc support is on the way.  
 i recommend passing `CC="zig cc"` to `make` as well if you wish to cross compile.  
@@ -18,9 +16,9 @@ i recommend passing `CC="zig cc"` to `make` as well if you wish to cross compile
 ### arm64 linux
 wip
 ### x86_64 linux
-wip
+planned
 ### x86_64 windows
-wip
+planned
 
 ## more targets
 add support for more targets and compilers (+linkers) at `src/sys/calls` and `src/sys/entry`
