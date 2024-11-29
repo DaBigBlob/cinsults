@@ -12,6 +12,17 @@
     }
 #endif
 
+#ifdef __linux__
+    #include "../main.c"
+
+    #error "BROKEN: will fix later"
+    #define def_main
+    int _start(int argc, char** argv) {
+        (void)argc;
+        return prog_main(argv);
+    }
+#endif
+
 // add more supported compiler (linker) entries
 
 #ifndef def_main
