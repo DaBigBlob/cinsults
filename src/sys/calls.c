@@ -80,7 +80,6 @@
 
 // #define __linux__
 #ifdef __linux__
-    #error "BROKEN: will fix later"
     #define NEWLINE "\n"
     
     #ifdef __aarch64__
@@ -106,6 +105,7 @@
     #endif
 
     #ifdef __x86_64__
+        #error "BROKEN: will fix later"
         /*
             https://www.chromium.org/chromium-os/developer-library/reference/linux-constants/syscalls/#calling-conventions
         */
