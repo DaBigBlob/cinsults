@@ -5,7 +5,7 @@ Writes insult(s) to stdout. Written in the C programming language without stdlib
 
 ## building
 right now only clang is supported however gcc support is on the way.  
-i recommend passing `CC="zig cc"` to `make` as well because it makes cross compiling insanely easy.  
+i recommend passing `CC="zig cc"` to `make` as well to cross compiling trivial.  
 
 ### arm64 macos
 ```bash
