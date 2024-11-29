@@ -29,7 +29,3 @@ add support for more targets and compilers (+linkers) at `src/sys/calls` and `sr
 to `src/insults.c`
 just add more insults at the end of the char* array[].
 make sure to update the patch insult version (the third number in the version string of INSULTS).
-
-# note (for now)
-dont try to use automatic optimizer i.e. `-O`. 
-it will fuck things up.
