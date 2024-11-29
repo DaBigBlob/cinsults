@@ -2,7 +2,7 @@
     THE REAL ENTRY POINT
 */
 
-#ifdef __clang__
+#ifdef __APPLE__
     #include "../main.c"
 
     #define def_main
@@ -15,5 +15,5 @@
 // add more supported compiler (linker) entries
 
 #ifndef def_main
-    #error "THIS COMPILER (LINKER) IS NOT SUPPORTED OUT OF THE BOX"
+    #error "THIS TARGET'S COMPILER (LINKER) IS NOT SUPPORTED OUT OF THE BOX"
 #endif
