@@ -16,6 +16,6 @@ clean: ${BIN}/
 	@rm -r "${BIN}"
 
 test: build
-	@printf "running:\n\n"
+	@printf "running: "
 	${BIN}/${NAME} ${TA}
 
