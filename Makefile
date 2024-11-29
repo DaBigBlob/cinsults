@@ -15,7 +15,6 @@ build: ${SRC}/${ENTRY}
 clean: ${BIN}/
 	@rm -r "${BIN}"
 
-.SILENT: test
 test: build
 	@printf "running:\n\n"
 	${BIN}/${NAME} ${TA}
